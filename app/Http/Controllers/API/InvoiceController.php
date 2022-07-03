@@ -18,7 +18,6 @@ class InvoiceController extends BaseController
 
     public function create(CreateInvoiceRequest $request): JsonResponse
     {
-        $customer = Customer::where('id', $request->customer_id)->first();
         return $this->handleResponse(
             (new InvoiceService())->get($request),
             'You have successfully created an invoice!'

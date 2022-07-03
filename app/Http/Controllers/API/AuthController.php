@@ -35,7 +35,7 @@ class AuthController extends BaseController
         return $this->handleResponse($success, 'User successfully registered!');
     }
 
-    public function me(Request $request): JsonResponse
+    public function me(): JsonResponse
     {
         return $this->handleResponse(new UserResource(Auth('sanctum')->user()), 'Success');
     }
